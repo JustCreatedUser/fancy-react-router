@@ -1,0 +1,16 @@
+:root {
+  --text-color: #000;
+  --bg-color: #fff;
+  --font-2XL: 227px;
+  --font-XL: 140px;
+  --font-M: 84px;
+  --font-h1: 64px;
+  --font-h2: 48px;
+  --font-h3: 32px;
+  --font-h4: 24px;
+  --font-h5: 20px;
+  --font-h6: 16px;
+  --font-bodyXL: 20px;
+  --font-bodyL: 18px;
+  --font-bodyM: 14px;
+}
