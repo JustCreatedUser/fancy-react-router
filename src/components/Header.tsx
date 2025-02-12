@@ -32,13 +32,12 @@ function getCurrentState(): [number, string] {
 }
 export default function Header() {
   const [activeLinkIndex, activeLinkName] = getCurrentState();
-  const list = useRef<HTMLUListElement>(null);
   const backdrop = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<string>(activeLinkName);
 
   useEffect(() => {
     const backdropStyles = backdrop.current!.style;
-    const activeLink = list.current!.children[
+    const activeLink = target.parentElement!.children[
       activeLinkIndex
     ] as HTMLAnchorElement;
     backdropStyles.transition = "none";
