@@ -37,7 +37,7 @@ export default function Header() {
 
   useEffect(() => {
     const backdropStyles = backdrop.current!.style;
-    const activeLink = target.parentElement!.children[
+    const activeLink = backdrop.current!.parentElement!.children[
       activeLinkIndex
     ] as HTMLAnchorElement;
     backdropStyles.transition = "none";
@@ -52,14 +52,14 @@ export default function Header() {
     const backdropStyles = backdrop.current!.style;
     backdropStyles.translate = `${link.offsetLeft - 5}px 0`;
     backdropStyles.width = `${link.offsetWidth}px`;
-    const index = Array.from(list.current!.children).indexOf(link);
+    const index = Array.from(link.parentElement!.children).indexOf(link);
     setActive(links[index].name.toLowerCase());
   }, []);
 
   return (
     <header>
       <h3>My Portfolio</h3>
-      <ul ref={list}>
+      <ul>
         {links.map((link) => (
           <Link
             onClick={handleClick}
